@@ -1,0 +1,30 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Booking Management System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Car Booking Management System</h1>
+
+  <div>
+    <h2>Add a New Booking</h2>
+    <label for="car">Car:</label>
+    <input type="text" id="car">
+    <label for="model">Model:</label>
+    <input type="text" id="model">
+    <button onclick="addBooking()">Add Booking</button>
+  </div>
+
+  <div>
+    <h2>Booking List</h2>
+    <ul id="bookingList"></ul>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+

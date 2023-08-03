@@ -1,0 +1,37 @@
+{
+    "cars": [
+      {
+        "id": 1,
+        "make": "Toyota",
+        "model": "Camry",
+        "year": 2022,
+        "color": "Silver",
+        "mileage": 10000
+      },
+      {
+        "id": 2,
+        "make": "Honda",
+        "model": "Civic",
+        "year": 2021,
+        "color": "Blue",
+        "mileage": 8000
+      },
+      {
+        "id": 3,
+        "make": "Ford",
+        "model": "Mustang",
+        "year": 2020,
+        "color": "Red",
+        "mileage": 15000
+      },
+      {
+        "id": 4,
+        "make": "Chevrolet",
+        "model": "Equinox",
+        "year": 2023,
+        "color": "Black",
+        "mileage": 5000
+      }
+    ]
+  }
+  
