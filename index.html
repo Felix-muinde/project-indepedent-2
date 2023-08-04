@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,23 +7,25 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Car Booking Management System</h1>
-
-  <div>
-    <h2>Add a New Booking</h2>
-    <label for="car">Car:</label>
-    <input type="text" id="car">
-    <label for="model">Model:</label>
-    <input type="text" id="model">
-    <button onclick="addBooking()">Add Booking</button>
+  <div class="container">
+    <h1>Car Booking Management System</h1>
+    <div class="car-list" id="carList">
+      <!-- Car list fetched from the API will be displayed here -->
+    </div>
+    <div class="booking-form">
+      <h2>Book a Car</h2>
+      <form id="bookingForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+        <label for="contact">Contact Information:</label>
+        <input type="text" id="contact" required>
+        <label for="pickupDate">Pickup Date:</label>
+        <input type="date" id="pickupDate" required>
+        <button type="submit">Book Now</button>
+      </form>
+    </div>
   </div>
 
-  <div>
-    <h2>Booking List</h2>
-    <ul id="bookingList"></ul>
-  </div>
-
-  <script src="app.js"></script>
+  <script src="App.js"></script>
 </body>
 </html>
-

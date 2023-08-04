@@ -1,81 +1,44 @@
-// app.js
-const bookingList = document.getElementById('bookingList');
+const apiUrl = 'http://localhost:3000/cars';
 
-function displayBookings(bookings) {
-  bookingList.innerHTML = '';
-  bookings.forEach((booking) => {
-    const listItem = document.createElement('li');
-    listItem.innerHTML = `${booking.car} - ${booking.model} 
-      <button onclick="updateBooking(${booking.id})">Update</button>
-      <button onclick="deleteBooking(${booking.id})">Delete</button>`;
-    bookingList.appendChild(listItem);
-  });
-}
-
-function addBooking() {
-  const carInput = document.getElementById('car');
-  const modelInput = document.getElementById('model');
-
-  const newBooking = {
-    car: carInput.value,
-    model: modelInput.value,
-  };
-
-  fetch('/api/bookings', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(newBooking),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      carInput.value = '';
-      modelInput.value = '';
-      bookings.push(data);
-      displayBookings(bookings);
+// Fetch and display car list from the public API
+async function displayCarList() {
+  try {
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+    const carListContainer = document.getElementById('carList');
+    carListContainer.innerHTML = '';
+    data.forEach(car => {
+      const carCard = document.createElement('div');
+      carCard.classList.add('car-card');
+      carCard.innerHTML = `
+        <h3>${car.name}</h3>
+        <p>Model: ${car.model}</p>
+        <p>Price: ${car.price}</p>
+      `;
+      carListContainer.appendChild(carCard);
     });
+  } catch (error) {
+    console.error('Error fetching car list:', error);
+  }
 }
 
-function updateBooking(id) {
-  const carInput = document.getElementById('car');
-  const modelInput = document.getElementById('model');
+// Book a car
+document.getElementById('bookingForm').addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const name = document.getElementById('name').value;
+  const contact = document.getElementById('contact').value;
+  const pickupDate = document.getElementById('pickupDate').value;
 
-  const updatedBooking = {
-    car: carInput.value,
-    model: modelInput.value,
-  };
+  // Add code to handle the booking process, e.g., send data to the API and display success message
+  // You can use fetch() to send a POST request to the API for booking
 
-  fetch(`/api/bookings/${id}`, {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(updatedBooking),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      const index = bookings.findIndex((booking) => booking.id === id);
-      bookings[index] = data;
-      displayBookings(bookings);
-    });
-}
+  // Clear the form after submission
+  document.getElementById('name').value = '';
+  document.getElementById('contact').value = '';
+  document.getElementById('pickupDate').value = '';
+});
 
-function deleteBooking(id) {
-  fetch(`/api/bookings/${id}`, {
-    method: 'DELETE',
-  })
-    .then(() => {
-      bookings = bookings.filter((booking) => booking.id !== id);
-      displayBookings(bookings);
-    });
-}
-
-// Fetch initial booking data
-let bookings = [];
-fetch('/api/bookings')
-  .then((response) => response.json())
-  .then((data) => {
-    bookings = data;
-    displayBookings(bookings);
-  });
+// Load car list when the page is ready
+document.addEventListener('DOMContentLoaded', () => {
+  displayCarList();
+});
