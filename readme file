@@ -1,53 +1,40 @@
-# Car Booking Management System
 
-This is a car booking management system that allows users to view the list of available cars, book a car, and manage their bookings. The system interacts with a public API to fetch car data and handle booking operations.
 
-## Author
+Car Selling App
+Author: Felix Mutuku
 
-[Your Name]
+Description
+The Car Selling App is a web application that facilitates the buying and selling of cars online. It provides a platform for both car dealers and individual sellers to list their vehicles and for potential buyers to browse, search, and purchase cars. The app offers various features, including user registration, car listings, detailed car information, image uploads, and communication between buyers and sellers.
 
-## Description
+Project Setup Instructions
+To run the Car Selling App locally on your machine, follow these steps:
 
-The Car Booking Management System is a web application that provides users with a simple interface to browse available cars and book them for a specific pickup date. Users can view a list of cars, select a car for booking, fill out their name, contact information, and pickup date, and submit the booking form. The system handles bookings asynchronously using JSON to communicate with the public API.
+Clone the repository to your local machine using git clone https://github.com/Felix-Mutuku/car-selling-app.git.
 
-## Features
+Navigate to the project directory with cd car-selling-app.
 
-- View a list of available cars with their details (name, model, and price).
-- Book a car by providing name, contact information, and pickup date.
-- Display error messages for invalid form inputs.
-- Asynchronously handle booking requests using JSON with a public API.
-- Update and delete existing bookings (Note: Backend API implementation required).
+Install the required dependencies using npm install.
 
-## Technologies Used
+Set up the environment variables and database connection details (if applicable).
 
-- HTML
-- CSS
-- JavaScript
-- Fetch API
+Start the development server with npm start.
 
-## Project Setup
+Access the app in your web browser at http://localhost:3000.
 
-1. Clone this repository to your local machine using `git clone`.
-2. Open `index.html` in your web browser to run the application.
+Live Site
+The live version of the Car Selling App can be found on GitHub Pages at https://Felix-Mutuku.github.io/car-selling-app.
 
-## API Endpoint
+License
+The Car Selling App is licensed under the MIT License.
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-The application fetches car data from a public API. Make sure to replace the `apiUrl` variable in `script.js` with the correct URL of the public API that provides car data.
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-## How to Use
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-1. Access the application by opening `index.html` in your web browser.
-2. The car list will be displayed, showing the available cars with their details.
-3. To book a car, fill out the booking form with your name, contact information, and pickup date.
-4. Click on the "Book Now" button to submit your booking request.
-5. Your booking will be processed, and the car list will be updated to reflect the changes.
-6. You can view the updated car list and make additional bookings or update/delete existing bookings as needed.
+Copyright (c) [2023] [Felix Mutuku]
 
-## Deployment
+Feel free to use, modify, and distribute this project as per the terms of the MIT License. Attribution to the original author (Your Name) is appreciated but not required.
 
-To deploy this application, you can host it on a web server or use GitHub Pages.
-
-## License
-
-[Include your license information here.]
-
+Contact Information
+For any inquiries or issues related to the Car Selling App, please contact me at felixmuinde6@gmail.com
