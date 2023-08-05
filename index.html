@@ -3,29 +3,252 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Car Booking Management System</title>
+  <title>Car Selling App</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 </head>
-<body>
-  <div class="container">
-    <h1>Car Booking Management System</h1>
-    <div class="car-list" id="carList">
-      <!-- Car list fetched from the API will be displayed here -->
-    </div>
-    <div class="booking-form">
-      <h2>Book a Car</h2>
-      <form id="bookingForm">
-        <label for="name">Name:</label>
-        <input type="text" id="name" required>
-        <label for="contact">Contact Information:</label>
-        <input type="text" id="contact" required>
-        <label for="pickupDate">Pickup Date:</label>
-        <input type="date" id="pickupDate" required>
-        <button type="submit">Book Now</button>
-      </form>
-    </div>
-  </div>
+</html>
+  
 
+  <header>
+    
+
+    <div class="nav container">
+      
+      <box-icon name='menu'></box-icon>
+      <a href="#" class="logo">car<span>Point</span></a>
+
+      <ul class="navbar">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#cars">Cars</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#parts">Parts</a></li>
+        <li><a href="#services">Our services</a></li>
+      </ul>
+      <i class="bx bx-search" id="search-icon" ></i>
+      <div class="search-box container">
+        <input type="search" name="" id="" placeholder="search here...">
+      </div>
+    </div>
+    <form>
+      
+    
+    
+  </header>
+  <section class="home" id="home">
+    <div class="home-text">
+      <h1>we have all what you need <br>At <span>within</span></h1>
+      <p>we are committed to deliver Good products</p>
+      <a href="#" class="btn">Discover Now</a>
+    </div>
+
+  </section>
+  <section class="cars" id="cars">
+    <div class="heading">
+      <span>All Cars</span>
+      <h2>We have all model of cars</h2>
+      <p>Feel free to purchase one of our best priced cars</p>
+    </div>
+    <div class="cars-container">
+      <div class="box">
+  <img src="https://www.zero2turbo.com/wp-content/uploads/2020/02/2020-mercedes-amg-gle-63-s-coupe-11.jpg">
+        <h2>porche Car</h2>
+      </div>
+      <div class="box">
+        <img src="https://www.zero2turbo.com/wp-content/uploads/2020/02/2020-mercedes-amg-gle-63-s-coupe-11.jpg">
+        <h2>porche Car</h2>
+      </div>
+      <div class="box">
+        <img src="https://www.zero2turbo.com/wp-content/uploads/2020/02/2020-mercedes-amg-gle-63-s-coupe-11.jpg">
+        <h2>porche Car</h2>
+      </div>
+      <div class="box">
+        <img src="https://www.zero2turbo.com/wp-content/uploads/2020/02/2020-mercedes-amg-gle-63-s-coupe-11.jpg">
+        <h2>porche Car</h2>
+      </div>
+      <div class="box">
+        <img src="https://www.zero2turbo.com/wp-content/uploads/2020/02/2020-mercedes-amg-gle-63-s-coupe-11.jpg">
+        <h2>porche Car</h2>
+      </div>
+      <div class="box">
+        <img src="https://www.zero2turbo.com/wp-content/uploads/2020/02/2020-mercedes-amg-gle-63-s-coupe-11.jpg">
+        <h2>porche Car</h2>
+      </div>
+      <div class="box">
+        <img src="https://www.zero2turbo.com/wp-content/uploads/2020/02/2020-mercedes-amg-gle-63-s-coupe-11.jpg">
+        <h2>porche Car</h2>
+      </div>
+    </div>
+  </section>
+  <section class="about container" id="about">
+    <div class="about-img">
+    <img src="https://e7.pngegg.com/pngimages/809/777/png-clipart-car-revathy-auto-parts-ford-motor-company-spare-part-advance-auto-parts-car-car-vehicle.png">
+    <div class="about-text">
+      <span>About Us</span>
+      <h2>lower prices with <br>longterm service</h2>
+      <p>Access our quality cars at any time:
+        <a href="#" class="btn">learn more</a>
+
+</div>
+  </section>
+
+  <section class="parts" id="parts">
+    <div class="heading">
+      <span>what we offer</span>
+      <h2>Our cars are always Good</h2>
+      <p>Enjoy our best priced quality cars</p>
+    </div>
+    <div class="parts-container container">
+      <div class="box">
+        <img src="https://e7.pngegg.com/pngimages/666/780/png-clipart-car-spare-part-graphy-auto-parts-angle-photography-thumbnail.png">
+        <h3>Auto spare parts</h3>
+        <span>$120.99</span>
+        <i class="bx bxs-star">(3 reviews)</i>
+        <a href="#" class="btn">Purchase Now</a>
+        <a href="#" class="details">View details</a>
+      </div>
+
+      <div class="box">
+        <img src="https://e7.pngegg.com/pngimages/451/811/png-clipart-several-gear-lot-used-car-spare-part-motor-vehicle-car-parts-recycling-car-thumbnail.png">
+        <h3>Auto spare parts</h3>
+        <span>$120.99</span>
+        <i class="bx bxs-star">(6 reviews)</i>
+        <a href="#" class="btn">Purchase Now</a>
+        <a href="#" class="details">View details</a>
+      </div>
+
+      <div class="box">
+        <img src="https://e7.pngegg.com/pngimages/731/396/png-clipart-car-nissan-exhaust-system-vehicle-spare-part-auto-parts-transport-auto-parts-thumbnail.png">
+        <h3>Auto spare parts</h3>
+        <span>$120.99</span>
+        <i class="bx bxs-star">(6 reviews)</i>
+        <a href="#" class="btn">Purchase Now</a>
+        <a href="#" class="details">View details</a>
+      </div>
+
+      <div class="box">
+        <img src="https://e7.pngegg.com/pngimages/379/944/png-clipart-grey-and-black-alternator-car-alternator-starter-dynamo-spare-part-parts-company-automobile-repair-shop-thumbnail.png">
+        <h3>Auto spare parts</h3>
+        <span>$120.99</span>
+        <i class="bx bxs-star">(6 reviews)</i>
+        <a href="#" class="btn">Purchase Now</a>
+        <a href="#" class="details">View details</a>
+      </div>
+
+      <div class="box">
+        <img src="https://e7.pngegg.com/pngimages/127/31/png-clipart-car-tata-motors-engine-spare-part-vehicle-engine-parts-car-automobile-repair-shop-thumbnail.png">
+        <h3>Auto spare parts</h3>
+        <span>$120.99</span>
+        <i class="bx bxs-star">(6 reviews)</i>
+        <a href="#" class="btn">Purchase Now</a>
+        <a href="#" class="details">View details</a>
+      </div>
+
+      <div class="box">
+        <img src="https://e7.pngegg.com/pngimages/353/832/png-clipart-car-suspension-vehicle-graphy-automotive-engine-parts-3d-computer-graphics-photography-thumbnail.png">
+        <h3>Auto spare parts</h3>
+        <span>$120.99</span>
+        <i class="bx bxs-star">(6 reviews)</i>
+        <a href="#" class="btn">Purchase Now</a>
+        <a href="#" class="details">View details</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="blog" id="blog">
+    <div class="heading">
+      <span>Blog & News</span>
+      <h2>Our Blog content</h2>
+      <p>Your wish is our number one priority</p>
+      </div>
+    <div class="blog-container container">
+      <div class="box">
+        <img src="https://www.nicepng.com/png/detail/134-1345584_mercedes-benz-s-class-car-png-image-mercedes.png">
+        <span>May 20 2020</span>
+        <h3>How to Get a Good Car At Cheaper Price</h3>
+        <p>Enjoy a Discounted Price Of Upto 20,000</p>
+        <a href="#" class="blog-btn">Read More<i class="bx bx-right-arrow-alt" ></i></a>
+      </div>
+
+      <div class="box">
+        <img src="https://i.pinimg.com/736x/db/85/85/db8585a27a882b9fee3a47b234b8bf53--mercedes-s-class-mercedes-benz.jpg">
+        <span>May 20 2020</span>
+        <h3>How to Get a Good Car At Cheaper Price</h3>
+        <p>Enjoy a Discounted Price Of Upto 20,000</p>
+        <a href="#" class="blog-btn">Read More<i class="bx bx-right-arrow-alt" ></i></a>
+      <img src="data:image/jpeg;base64,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">
+        <span>May 20 2020</span>
+        <h3>How to Get a Good Car At Cheaper Price</h3>
+        <p>Enjoy a Discounted Price Of Upto 20,000</p>
+        <a href="#" class="blog-btn">Read More<i class="bx bx-right-arrow-alt" ></i></a>
+      </div>
+
+      <div class="box">
+        <img src="data:image/jpeg;base64,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">
+        <span>May 20 2020</span>
+        <h3>How to Get a Good Car At Cheaper Price</h3>
+        <p>Enjoy a Discounted Price Of Upto 20,000</p>
+        <a href="#" class="blog-btn">Read More<i class="bx bx-right-arrow-alt" ></i></a>
+      </div>
+    </div>
+  </section>
+  <section class="footer">
+    <div class="footer-container container">
+      <div class="footer-box">
+        <a href="#" class="logo">Car<span>Point</span></a>
+        <div class="social">
+          <a href="#"><i class='bx bx1-facebook' ></i></a>
+          <a href="#"><i class='bx bx1-twitter' ></i></a>
+          <a href="#"><i class='bx bx1-youtube' ></i></a>
+          <a href="#"><i class='bx bx1-instagram' ></i></a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-box">
+      <h3>page</h3>
+      <a href="#">privacy</a>
+      <a href="#">Policy on a Refund</a>
+      <a href="#">Cookie On Policy</a>
+      
+    </div>
+
+    <div class="footer-box">
+      <h3>page</h3>
+      <a href="#">Contact</a>
+      <p>Kenya</p>
+      <p>Dubai</p>
+      <p>Michigan</p>
+    </div>
+  </section>
+  <div class="copyright">
+    <p>&#169; Carnice All Rights Reserved</p>
+  </div>
+  <form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <h4>Image Gallery</h4>
+  <form id="imageForm">
+    <input type="text" id="imageUrl" placeholder="Enter Image URL">
+    <input type="text" id="altText" placeholder="Enter Alt Text">
+    <button type="button" id="addButton">Add Image</button>
+  </form>
+  <div id="imageGallery">
+    <!-- Image gallery will be dynamically generated here -->
+  </div>
   <script src="App.js"></script>
 </body>
 </html>

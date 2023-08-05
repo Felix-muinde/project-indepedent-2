@@ -1,44 +1,102 @@
-const apiUrl = 'http://localhost:3000/cars';
 
-// Fetch and display car list from the public API
-async function displayCarList() {
-  try {
-    const response = await fetch(apiUrl);
-    const data = await response.json();
-    const carListContainer = document.getElementById('carList');
-    carListContainer.innerHTML = '';
-    data.forEach(car => {
-      const carCard = document.createElement('div');
-      carCard.classList.add('car-card');
-      carCard.innerHTML = `
-        <h3>${car.name}</h3>
-        <p>Model: ${car.model}</p>
-        <p>Price: ${car.price}</p>
-      `;
-      carListContainer.appendChild(carCard);
-    });
-  } catch (error) {
-    console.error('Error fetching car list:', error);
+let search = document.querySelector('.search-box');
+
+document.querySelector('#search-icon').onclick = () => {
+    search.classList.toggle('active');
+    menu.classList.remove('active');
+
+}
+
+let menu = document.querySelector('.navbar');
+
+document.querySelector('#menu-icon').onclick = () => {
+    search.classList.toggle('active');
+    search.classList.remove('active');
+
+}
+window.onscroll = () => {
+    menu.classList.remove('active');
+    search.classList.remove('active');
+}
+
+let header = document.querySelector('header');
+
+window.addEventListener('scroll' , () => {
+    header.classList.toggle('shadow', window.scrollY > 0);
+});
+let imageGallery = [];
+
+function addImage() {
+  const imageUrl = document.getElementById("imageUrl").value;
+  const altText = document.getElementById("altText").value;
+
+  if (imageUrl.trim() !== "" && altText.trim() !== "") {
+    const newImage = {
+      id: Date.now(),
+      imageUrl,
+      altText,
+    };
+    imageGallery.push(newImage);
+    updateGallery();
+    document.getElementById("imageUrl").value = "";
+    document.getElementById("altText").value = "";
+  } else {
+    alert("Please fill in both Image URL and Alt Text.");
   }
 }
 
-// Book a car
-document.getElementById('bookingForm').addEventListener('submit', async (event) => {
-  event.preventDefault();
-  const name = document.getElementById('name').value;
-  const contact = document.getElementById('contact').value;
-  const pickupDate = document.getElementById('pickupDate').value;
+function deleteImage(id) {
+  imageGallery = imageGallery.filter((image) => image.id !== id);
+  updateGallery();
+}
 
-  // Add code to handle the booking process, e.g., send data to the API and display success message
-  // You can use fetch() to send a POST request to the API for booking
+function updateImage(id) {
+  const newAltText = prompt("Enter the new Alt Text:");
+  if (newAltText !== null) {
+    const imageToUpdate = imageGallery.find((image) => image.id === id);
+    if (imageToUpdate) {
+      imageToUpdate.altText = newAltText;
+      updateGallery();
+    }
+  }
+}
 
-  // Clear the form after submission
-  document.getElementById('name').value = '';
-  document.getElementById('contact').value = '';
-  document.getElementById('pickupDate').value = '';
-});
+function updateGallery() {
+  const imageGalleryDiv = document.getElementById("imageGallery");
+  imageGalleryDiv.innerHTML = ""; // Clear previous content
 
-// Load car list when the page is ready
-document.addEventListener('DOMContentLoaded', () => {
-  displayCarList();
-});
+  imageGallery.forEach((image) => {
+    const imageCard = document.createElement("div");
+    imageCard.className = "image-card";
+    imageCard.innerHTML = `
+      <img src="${image.imageUrl}" alt="${image.altText}">
+      <p>${image.altText}</p>
+      <button class="delete-btn">Delete</button>
+      <button class="update-btn">Update</button>
+    `;
+    imageGalleryDiv.appendChild(imageCard);
+  });
+
+  // Add event listeners for delete buttons
+  const deleteButtons = document.querySelectorAll(".delete-btn");
+  deleteButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const id = parseInt(button.parentElement.getAttribute("data-id"));
+      deleteImage(id);
+    });
+  });
+
+  // Add event listeners for update buttons
+  const updateButtons = document.querySelectorAll(".update-btn");
+  updateButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const id = parseInt(button.parentElement.getAttribute("data-id"));
+      updateImage(id);
+    });
+  });
+}
+
+// Event listener for the Add Image button
+const addButton = document.getElementById("addButton");
+addButton.addEventListener("click", addImage);
+
